@@ -12,7 +12,7 @@ class Postit extends React.Component {
             title: this.props.title ? this.props.title : '',
             text: this.props.text ? this.props.text : '',
             editing : false,
-            color : this.props.color ? this.props.color   : '#ECDDF3'
+            color : this.props.color ? this.props.color : '#ECDDF3'
         }
     }
     handlePostitClick = () => {

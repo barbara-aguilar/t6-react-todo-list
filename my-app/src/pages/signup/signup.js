@@ -4,24 +4,6 @@ import Container from '../../components/container'
 import signupUser from '../../apis/signup.api'
 import { setUser } from '../../infra/local-storage'
 
-// function Signup(){
-//     return (
-//         <Container>
-//             <Form title='Faça Seu Cadastro' text='Preencha com Seus Dados'>
-//                 <Form.Label htmlFor='name'>Nome:</Form.Label>
-//                 <Form.Input id='name' type='text'/>
-//                 <Form.Label htmlFor='email'>Email:</Form.Label>
-//                 <Form.Input id='email' type='email'/>
-//                 <Form.Label htmlFor='phone'>Telefone:</Form.Label>
-//                 <Form.Input id='phone' type='tel' />
-//                 <Form.Label htmlFor='password'>Senha:</Form.Label>
-//                 <Form.Input id='password' type='password' />
-//                 <Form.Button disabled>Enviar</Form.Button>
-//                 <Form.Link href='/login'>Fazer Login</Form.Link>
-//             </Form>
-//         </Container>
-//     )
-// }
 
 class Signup extends React.Component{
     constructor(){
@@ -53,6 +35,7 @@ class Signup extends React.Component{
         .then((response) => {
             setUser({ email : user.email})
             this.props.history.push('/')
+            this.props.showAlert('Seu email foi cadastrado com sucesso')
         })
         .catch((error) => {
             console.log(error)
